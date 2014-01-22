@@ -103,6 +103,10 @@ body, h1, h2, h3, h4, h5, h6 {
 	background-size: cover;
 }
 
+.navbar + .banner {
+    margin-top: 50px;
+}
+
 .banner h2 {
 	margin: 0;
 	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
