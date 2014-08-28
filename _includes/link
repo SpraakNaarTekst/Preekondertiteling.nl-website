@@ -1,0 +1,1 @@
+{% for page in site.pages %}{% if page.id == include.id %}{{site.baseurl}}{{page.url}}{% endif %}{% endfor %}
