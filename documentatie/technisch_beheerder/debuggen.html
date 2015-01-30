@@ -69,19 +69,19 @@ layout: nl
                     </h2>
                     <p class="lead">Als op het icoontje voor preekondertiteling wordt gedrukt, verschijnt niet het blauwe Preekondertitelingsscherm, maar een witte pagina met een foutmelding.</p>
                     <p>
-                        Oorzaak 1: de tablet heeft geen verbinding met het draadloze netwerk. Controleer dit rechtsbovenin het tabletscherm.
+                        Oorzaak 1: de tablet heeft geen verbinding met het draadloze netwerk. Controleer dit rechtsbovenin het tabletscherm en maak verbinding met het juiste netwerk. Herlaad dan de website/app.
                     </p>
                     <p>
-                        oorzaak 2: de tablet heeft verbinding met een ander draadloos netwerk. Controleer of de tablet wel verbinding heeft met het juiste netwerk.
+                        oorzaak 2: de tablet heeft verbinding met een ander draadloos netwerk. Controleer of de tablet wel verbinding heeft met het juiste netwerk. Zo niet, maak dan verbinding met het juiste netwerk. Herlaad dan de website/app.
                     </p>
                     <p>
-                        Oorzaak 3: de Preekondertiteling PC staat niet aan.
+                        Oorzaak 3: de Preekondertiteling PC staat niet aan. Start de PC op. Herlaad daarna de website/app.
                     </p>
                     <p>
-                        Oorzaak 4: de Preekondertiteling PC is de verbinding met de draadloze router kwijtgeraakt. In dit geval is de PC ook niet te bereiken via VNC. Zie <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">inloggen op de Server PC via VNC</a>
+                        Oorzaak 4: de Preekondertiteling PC is de verbinding met de draadloze router kwijtgeraakt. Controleer dit door <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">in te loggen op de Server PC via VNC</a>. Als dit niet lukt, is er inderdaad geen netwerkverbinding mogelijk met de PC. Controleer en herstel de fysieke netwerkverbinding. Herlaad dan de website/app.
                     </p>                    
                     <p>
-                        Oorzaak 5: de Preekondertiteling PC staat aan, maar Preekondertiteling staat niet aan. Dit is te controleren door vanaf een tablet in te loggen op de Preekondertiteling PC via VNC. Zie <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">inloggen op de Server PC via VNC</a>.
+                        Oorzaak 5: de Preekondertiteling PC staat aan, maar Preekondertiteling staat niet aan. Dit is te controleren door vanaf een tablet <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">in te loggen op de Preekondertiteling PC via VNC</a>. Als er wél verbinding met de PC is, maar Preekondertiteling is niet opgestart, start dan Preekondertiteling op. Herlaad daarna de website/app.
                     </p>
 
                 </div>
@@ -109,7 +109,7 @@ layout: nl
                     </h2>
                     <p class="lead">De preekondertiteling website/app werkt, maar er verschijnen vreemde meldingen in het tekstscherm</p>
                     <p>
-                        Oorzaak 1: de Preekondertiteling website is feitelijk in het geheel niet bereikbaar, maar de tablet heeft nog een gecachte versie van de pagina waardoor het lijkt alsof de website wél geladen kan worden. Daarna is echter de verbinding niet beschikbaar. Herlaad de pagina. Als er nu een witte pagina verschijnt, achterhaal dan de oorzaak via bovenstaande oorzakenlijst. Als er wederom een blauwe pagina verschijnt met dezelfde foutmelding, zie dan oorzaak 2.
+                        Oorzaak 1: de Preekondertiteling website is feitelijk in het geheel niet bereikbaar, maar de tablet heeft nog een gecachte versie van de pagina waardoor het lijkt alsof de website wél geladen kan worden. Vanaf de gecachte pagina is echter de verbinding met de PC alsnog niet beschikbaar. Herlaad de pagina. Als er nu een witte pagina verschijnt, achterhaal dan de oorzaak via bovenstaande oorzakenlijst. Als er wederom een blauwe pagina verschijnt met dezelfde foutmelding, zie dan oorzaak 2.
                     </p>
                     <p>
                         Oorzaak 2: de Preekondertiteling webserver draait en de website/app wordt geserveerd, maar de websockets-server om de tekst te streamen is niet beschikbaar. Los dit op door <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">op de PC in te loggen via VNC</a>. Herstart daar Preekondertiteling en ververs vervolgens de Preekondertiteling website/app.
