@@ -1,0 +1,179 @@
+---
+
+id: nl/documentatie/technisch_beheerder/debuggen
+
+title: Documentatie - Technisch Beheerder - Verbindingsfouten debuggen
+lang: nl
+
+layout: nl
+
+---
+    
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Verbindingsfouten debuggen</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <!--<a href="/contact" class="btn btn-default btn-lg"><i class="fa fa-inbox fa-fw"></i> <span class="network-name">Contact</span></a>-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">
+                        Symptomen en oorzaken
+                    </h2>
+                    <p class="lead">Verbindingsfouten kunnen zich uiten op verschillende manieren. Hieronder bespreken we alle bekende varianten en de bijbehorende oorzaken en oplossingen.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">
+                        Tablet kan de Preekondertiteling website niet openen.
+                    </h2>
+                    <p class="lead">Als op het icoontje voor preekondertiteling wordt gedrukt, verschijnt niet het blauwe Preekondertitelingsscherm, maar een witte pagina met een foutmelding.</p>
+                    <p>
+                        Oorzaak 1: de tablet heeft geen verbinding met het draadloze netwerk. Controleer dit rechtsbovenin het tabletscherm en maak verbinding met het juiste netwerk. Herlaad dan de website/app.
+                    </p>
+                    <p>
+                        oorzaak 2: de tablet heeft verbinding met een ander draadloos netwerk. Controleer of de tablet wel verbinding heeft met het juiste netwerk. Zo niet, maak dan verbinding met het juiste netwerk. Herlaad dan de website/app.
+                    </p>
+                    <p>
+                        Oorzaak 3: de Preekondertiteling PC staat niet aan. Start de PC op. Herlaad daarna de website/app.
+                    </p>
+                    <p>
+                        Oorzaak 4: de Preekondertiteling PC is de verbinding met de draadloze router kwijtgeraakt. Controleer dit door <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">in te loggen op de Server PC via VNC</a>. Als dit niet lukt, is er inderdaad geen netwerkverbinding mogelijk met de PC. Controleer en herstel de fysieke netwerkverbinding. Herlaad dan de website/app.
+                    </p>                    
+                    <p>
+                        Oorzaak 5: de Preekondertiteling PC staat aan, maar Preekondertiteling staat niet aan. Dit is te controleren door vanaf een tablet <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">in te loggen op de Preekondertiteling PC via VNC</a>. Als er wél verbinding met de PC is, maar Preekondertiteling is niet opgestart, start dan Preekondertiteling op. Herlaad daarna de website/app.
+                    </p>
+
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    ...
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">
+                        "Socket" of "timeout" foutmeldingen op de Preekondertiteling website/app.
+                    </h2>
+                    <p class="lead">De preekondertiteling website/app werkt, maar er verschijnen vreemde meldingen in het tekstscherm</p>
+                    <p>
+                        Oorzaak 1: de Preekondertiteling website is feitelijk in het geheel niet bereikbaar, maar de tablet heeft nog een gecachte versie van de pagina waardoor het lijkt alsof de website wél geladen kan worden. Vanaf de gecachte pagina is echter de verbinding met de PC alsnog niet beschikbaar. Herlaad de pagina. Als er nu een witte pagina verschijnt, achterhaal dan de oorzaak via bovenstaande oorzakenlijst. Als er wederom een blauwe pagina verschijnt met dezelfde foutmelding, zie dan oorzaak 2.
+                    </p>
+                    <p>
+                        Oorzaak 2: de Preekondertiteling webserver draait en de website/app wordt geserveerd, maar de websockets-server om de tekst te streamen is niet beschikbaar. Los dit op door <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">op de PC in te loggen via VNC</a>. Herstart daar Preekondertiteling en ververs vervolgens de Preekondertiteling website/app.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    ...
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+    
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">
+                        Er verschijnt geen tekst in het tekstvak van de Preekondertiteling app
+                    </h2>
+                    <p class="lead">De predikant spreekt, maar er verschijnt geen tekst. Er zijn ook geen foutmeldingen zoals hierboven beschreven.</p>
+                    <p>
+                        Oorzaak 1: de preekondertiteling website/app is een keer de verbinding met het draadloze netwerk kwijtgeraakt en heeft de verbinding niet correct hersteld. Herlaad de pagina om dit op te lossen.
+                    </p>
+                    <p>
+                        Oorzaak 2: er komt geen geluid binnen in de Preekondertiteling PC. Controleer dit door <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">op de PC in te loggen via VNC</a>. Er zou een rood icoontje rechtsonderin het scherm moeten staan die oplicht wanneer er gesproken wordt.
+                    </p>
+                    <p>
+                        Oorzaak 3: er is een foutmelding of popup op de Preekondertiteling PC. Controleer dit door <a href="{% include link id="nl/documentatie/technisch_beheerder/vnc" %}">op de PC in te loggen via VNC</a>. Klik de popup weg en kijk of het probleem opgelost is.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    ...
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+    
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <!--<h2>Bedankt!</h2>-->
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
