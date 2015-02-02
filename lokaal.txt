@@ -1,0 +1,20 @@
+Install ruby, and add to PATH
+http://rubyinstaller.org/
+
+Install ruby development kit
+http://rubyinstaller.org/downloads/
+https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
+Extract naar permanente locatie
+ruby dk.rb init
+ruby dk.rb install
+
+Install Github Pages GEM
+https://github.com/github/pages-gem
+
+To compile
+jekyll build
+To run
+jekyll serve
+
+Of als dat laatste niet werkt
+start server.bat
