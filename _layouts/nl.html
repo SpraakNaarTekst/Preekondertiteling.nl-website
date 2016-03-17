@@ -97,7 +97,7 @@
 			{% assign sorted_pages = site.pages | sort: "navigationGroupRank" %}
 			{% for node in sorted_pages %}
 				{% capture nodeURLStart %}{{node.url | truncate:7}}{% endcapture %}
-				{% if nodeURLStart == "/" or nodeURLStart == "/ind..." or nodeURLStart == "/nl/..." %}
+				{% if nodeURLStart == "/" or nodeURLStart == "/nl/" or nodeURLStart == "/ind..." or nodeURLStart == "/nl/..." %}
 					{% if node.group == null %} 
 						{% if node.navigationGroup == "main" %}
 							{% if page.id == node.id or page.additionalNavigationHighlight == node.id %}
