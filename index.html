@@ -1,41 +1,42 @@
 ---
 
-id: "nl/mainindex" # used as unique pointer for links and translations
-translationGroup : "index" # all translations for this page are defined within that group. See _config.yml
-lang: "nl"
+id: nl/index
+
+title: Welkom
+lang: nl
 
 layout: nl
-title: Home # the page title will be prepended to common title
-keywords: null # page specific keywords in an array []
-description: null # page specific description
-group: null
-includeScripts: []
-
-navigationGroup: null
-navigationGroupRank: null # pages in the menu get sorted by navigationGroupRank
-
-ogTitle: "Preekondertiteling - Lees elke preek live mee op een tablet"
-ogUrl: "http://preekondertiteling.nl/nl"
 
 ---
 
-        <!-- Header -->
-        <header>
-          <div class="page-header">
+    <div class="intro-header">
+		
+        <div class="container">
+
             <div class="row">
-	            <div class="col-lg-6 pull-right">
-	              <h1 class="hidden-xs">Preek Ondertiteling</h1>
-	              <h2>voor doven en slechthorenden</h2>
-	              <p class="lead text-justify">Geautomatiseerde ondertiteling van preken op tablets</p>
-	              <h5>een product van &nbsp; <a href="http://www.spraaknaartekst.eu"> <img src="/static/img/logo spraaknaartekst.png" width=15%/></a></h5>
-	            </div>
-	            <div class="col-lg-6 pull-left">
-	              <img src="/static/img/pictogram.png" class="img-responsive centerimage" style="margin-top: 5px;" alt="Spraak naar Tekst logo">
-	            </div>
-	          </div>
-          </div>
-        </header>
-        <!-- / Header -->
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Preek Ondertiteling voor doven</h1>
+                        <h3>Geautomatiseerde ondertiteling van preken op tablets</h3>
+						<h5>een product van &nbsp; <a href="http://www.spraaknaartekst.eu"> <img src="static/img/Logo b - logo.png" width=15%/></a></h5>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="{% include link id="nl/contact" %}" class="btn btn-default btn-lg"><i class="fa fa-inbox fa-fw"></i> <span class="network-name">Neem contact met ons op</span></a>
+                            </li>
+                            <li>
+                                <a href="{% include link id="nl/documentatie" %}" class="btn btn-default btn-lg"><i class="fa fa-files-o fa-fw"></i> <span class="network-name">Documentatie</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
 
     <div class="content-section-a">
 
