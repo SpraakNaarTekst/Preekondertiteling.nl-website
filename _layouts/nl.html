@@ -1,109 +1,173 @@
 <!DOCTYPE html>
-<html lang="nl"> 
-
-<head>
+<html lang="nl">
+  <head>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.blogname | xml_escape }}" href="{{site.baseurl}}/feed.xml">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>{{ page.title }}{% if page.title %} - {% endif %}Spraak naar Tekst - Voor het beschikbaar maken van spraak voor doven en slechthorenden</title>
 
-    <title>{{page.title}} - Preekondertiteling.nl - Automatische Ondertiteling van Preken</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.keywords %}
+    	{% if page.keywords.size != 0 %}
+    		<meta name="keywords" content="spraak naar tekst, spraak, tekst, tekstherkenning, preekondertiteling{% for keyword in page.keywords %},{{keyword}}{% endfor %}">
+		  {% endif %}
+	  {% else %}
+		  <meta name="keywords" content="spraak naar tekst, spraak, tekst, tekstherkenning, preekondertiteling">
+	  {% endif %}
+    {% if page.description %}
+      <meta name="description" content="{{page.description}}">
+    {% else %}
+      <meta name="description" content="Wij proberen doven en slechthorenden te helpen zo veel mogelijk mee te maken van de 'gesproken wereld'. Ons belangrijkste product is op dit moment Preekondertiteling: het meelezen van een kerkdienst op een tablet.">
+    {% endif %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    {% if page.ogTitle %}
+    	<meta property="og:title" content="{{page.ogTitle}}" />
+    {% elsif page.title %}
+    	<meta property="og:title" content="{{page.title}} - Spraak naar Tekst - Voor het beschikbaar maken van spraak voor doven en slechthorenden" />
+    {% else %}
+      <meta property="og:title" content="Spraak naar Tekst - Voor het beschikbaar maken van spraak voor doven en slechthorenden" />
+    {% endif %}
+    <meta property="og:type" content="{{page.ogType}}" />
+	<meta property="og:image" content="{{page.ogImage}}" />
+    {% if page.ogUrl %}
+    	<meta property="og:url" content="{{page.ogUrl}}" />
+    {% else %}
+    	<meta property="og:url" content="{{site.baseurl}}{{page.url}}" />
+    {% endif %}
+    {% if page.ogVideo %}
+    	<meta property="og:video" content="{{page.ogVideo}}" />
+   	{% endif %}
 
-    <!-- Font awesome and Google Web Font -->
-    <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/static/css/bootswatch.min.css">
+    <link rel="stylesheet" href="/static/css/landing-page.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
 
-    <!-- Custom CSS -->
-    <link href="/static/css/landing-page.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://preekondertiteling.nl">Preekondertiteling.nl</a>
+    {% if site.translations[page.translationGroup] and site.translations[page.translationGroup].size > 0 %}
+      {% for lang in site.translations[page.translationGroup] %}
+        {% assign langId = lang[0] %}
+        {% assign linkId = lang[1] %}
+        {% capture translateUrl %}{% for node in site.pages %}{% if node.id == linkId %}{{node.url}}{% endif %}{% endfor %}{% endcapture %}
+        {% if translateUrl %}
+          <link rel="alternate" hreflang="{{langId}}" href="{{site.baseurl}}{{translateUrl}}">
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </head>
+  <body>
+    
+    <!-- Navbar -->
+    <nav>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="standout">
+          <div class="container">
+            <div class="row ">
+              <div class="col-lg-12">
+                <span class="pull-right">
+                    <a href="http://preekondertiteling.nl" target="_blank" class="tab active">preekondertiteling.nl</a>
+                    <a href="http://spraaknaartekst.eu" target="_top" class="tab">spraaknaartekst.eu</a> 
+                </span>
+                <span class="pull-right">
+                  <a href="https://www.facebook.com/spraaknaartekst" target="_blank"><span class="fa fa-facebook"></span></a>&nbsp; &nbsp; &nbsp;
+                  <a href="https://twitter.com/impeeNL/" target="_blank"><span class="fa fa-twitter"></span></a>&nbsp; &nbsp; &nbsp;
+                  <a href="https://plus.google.com/117426316552058985657" target="_blank"><span class="fa fa-google-plus"></span></a>&nbsp; &nbsp; &nbsp;
+                  <a href="https://www.linkedin.com/company/3672509" target="_blank"><span class="fa fa-linkedin"></span></a>&nbsp; &nbsp; &nbsp;
+                </span>
+              </div>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="{% include link id="nl/index" %}">Wat is het</a>
-                    </li>
-                    <li>
-                        <a href="{% include link id="nl/werking" %}">Hoe werkt het</a>
-                    </li>
-                    <li>
-                        <a href="{% include link id="nl/aanschaffen" %}">Aanschaffen?</a>
-                    </li>
-                    <li>
-                        <a href="{% include link id="nl/documentatie" %}">Documentatie</a>
-                    </li>
-                    <li>
-                        <a href="{% include link id="nl/contact" %}">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+          </div>
         </div>
-        <!-- /.container -->
+        <div class="container"> 
+          <div class="navbar-header">
+            <a href="{{site.baseurl}}/nl" class="navbar-brand"><img src='/static/img/logo.png' alt='spraak naar tekst logo' class='navigationlogo'/></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              
+			{% assign sorted_pages = site.pages | sort: "navigationGroupRank" %}
+			{% for node in sorted_pages %}
+				{% capture nodeURLStart %}{{node.url | truncate:7}}{% endcapture %}
+				{% if nodeURLStart == "/" or nodeURLStart == "/ind..." or nodeURLStart == "/nl/..." %}
+					{% if node.group == null %} 
+						{% if node.navigationGroup == "main" %}
+							{% if page.id == node.id or page.additionalNavigationHighlight == node.id %}
+								<li class="active"><a href="{{node.url}}">{{node.title}}</a></li>
+							{% else %}
+								<li><a href="{{node.url}}">{{node.title}}</a></li>
+							{% endif %}
+						{% endif %}
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+            </ul>
+          </div>
+          <div>
+          <img src="/static/img/lijntje.png" class="belowlogoline"/>
+          </div>
+        </div>
+      </div>
     </nav>
+    <!-- / Navbar -->
 
-    {{content}}
 
+    <!-- Main -->
+    <section>
+      <div class="container" role="main">
+      	{{content}}
+  	  </div>
+  	</section>
+  	<!-- / Main -->
+
+    <!-- Footer -->
     <footer>
+      <div class="standout">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="{% include link id="nl/index" %}">Wat is het</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="{% include link id="nl/werking" %}">Hoe werkt het</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="{% include link id="nl/documentatie" %}">Documentatie</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="{% include link id="nl/contact" %}">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Spraak Naar Tekst VOF. Alle rechten voorbehouden.</p>
-                </div>
+          <div class="row">
+            <div class="col-lg-6 text-right pull-right">
+              <a href="#top">Back to top</a>
             </div>
+            <div class="col-lg-6 pull-left">
+              Spraak naar Tekst VOF &nbsp;&nbsp;&nbsp;&nbsp; Hoogveen 54 &nbsp;&nbsp;&nbsp;&nbsp; Hendrik-Ido-Ambacht &nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:info@spraaknaartekst.eu">info@spraaknaartekst.eu</a>
+            </div>
+          </div>
         </div>
+      </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="static/js/jquery-1.10.2.js"></script>
-    <script src="static/js/bootstrap.js"></script>
+    <!-- / Footer -->
 
 
-    <script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootswatch.js"></script>
+
+    {% if page.includeScripts %}
+    	{% if page.includeScripts.size != 0 %}
+    		{% for script in page.includeScripts %}
+    			{% capture includename %}scripts/{{ script }}.incl{% endcapture %}
+    			{% include {{includename}} %}
+  			{% endfor %}
+  		{% endif %}
+  	{% endif %}
+
+	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		ga('create', 'UA-55179512-2', 'auto');
+        ga('require', 'displayfeatures'); // Demographics and interests
 		ga('send', 'pageview');
 	</script>
-
-</body>
-
+  </body>
 </html>
