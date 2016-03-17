@@ -1,0 +1,207 @@
+/* Body and footer positioning and sizing */
+
+html {
+	position: relative;
+    min-height: 100%;
+}
+
+body{
+	padding-top: 100px;
+	margin-bottom: 6em;
+}
+
+footer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+/* / Body and footer positioning and sizing */
+
+.btn-warning {
+	letter-spacing: 1px;
+}
+
+.navbar a.active {
+	text-decoration: underline;
+    background: #fff; 
+}
+.navbar .nav li a {
+	color: #158cba;
+}
+.navbar .nav li a.active {
+	color: #09357a;
+	text-decoration: none;
+}
+.navbar .flag.active {
+    border-bottom: 2px solid #ddd;
+}
+.navbar a.tab {
+    padding: 11px;
+    margin-bottom: 0px;
+}
+
+.callus {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.navigationlogo {
+	margin: 8px 0px 8px 0px;
+	height: 24px;
+}
+
+.belowlogoline {
+	position: absolute;
+	margin-left: -20px;
+	height: 7px;
+}
+
+#banner{border-bottom:none}
+
+.standout {
+	background: #f8f8f8;
+	padding: 10px;
+}
+
+.page-header h1 {
+	font-size: 4em;
+}
+
+.panel-heading h2 {
+	font-size: 1.5em;
+	margin: 10px 0px;
+}
+
+.centerimage {
+	display: block;
+	margin: 0px auto;
+}
+
+.map {
+	height: 300px;
+}
+
+.panel-title {
+	color: #09357a;
+}
+
+.toggleHidden {
+	display: none;
+}
+
+.toggleBox {
+	margin-top: 20px;
+}
+
+	.toggleBoxHeader {
+		margin-left: 15px; 
+		font-weight: bold;
+	}
+
+	.toggleBoxBody {
+		display: none; 
+		padding: 10px;
+	}
+
+.helperText {
+	border-bottom: 1px dashed #ccc;
+	cursor: pointer;
+}
+
+/*  */
+
+/* button color styles */
+.btn-primary1 {
+  color: #ffffff;
+  background-color: #c65c37;
+  border-color: #a84e2f;
+}
+.btn-primary2, .btn-primary2:hover {
+  color: #ffffff;
+  background-color: #e64d17;
+  border-color: #c44214;
+}
+.btn-primary2 .badge {
+	color: #c44214;
+	background-color: #fff;
+}
+
+/* Mailchimp form styles */
+#mc_embed_signup {
+	background: #fff; 
+	clear: left; 
+	font: 14px Helvetica,Arial,sans-serif;
+}
+
+#mc_embed_signup form {
+	padding: 0px;
+}
+
+#mc_embed_signup input {
+	border: 1px solid #e7e7e7 !important;
+}
+/* end Mailchimp */
+
+form label  {
+	position: relative;
+	width: 100%;
+}
+
+.asterisk {
+	color: #c60;
+	font-size: 200%;
+}
+
+label .asterisk {
+	position: absolute;
+	top: 25px;
+	right: 10px;
+}
+
+
+.bs-docs-section{margin-top:8em}
+
+.bs-component{position:relative}
+.bs-component .modal{position:relative;top:auto;right:auto;left:auto;bottom:auto;z-index:1;display:block}
+.bs-component .modal-dialog{width:90%}
+.bs-component .popover{position:relative;display:inline-block;width:220px;margin:20px}
+
+#source-button{position:absolute;top:0;right:0;z-index:100;font-weight:bold}
+
+.progress{margin-bottom:10px}
+
+footer li{float:left;margin-right:1.5em;margin-bottom:1.5em}
+footer p{clear:left;margin-bottom:0}
+
+.splash{padding:4em 0 2em;background-color:#1c2533;background:-webkit-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);background:-o-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);background:-ms-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);background:-moz-linear-gradient(70deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);background:linear-gradient(20deg, #080f1f 30%, #2b4b5a 87%, #435e67 100%);background-attachment:fixed;color:#fff;text-align:center}
+.splash h1{font-size:4em}
+.splash #social{margin:2em 0}
+.splash .alert{margin:2em 0}
+.splash .bsa{max-width:350px;margin:0 auto;background:none}
+.splash .bsa .one .bsa_it_ad{border:1px solid #3e4653 !important;border-color:rgba(255,255,255,0.2) !important}
+.splash .bsa a{color:#fff}
+
+.section-tout{padding:4em 0 3em;border-top:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(0,0,0,0.1);background-color:#eaf1f1}
+.section-tout .fa{margin-right:.5em}
+.section-tout p{margin-bottom:3em}
+.section-preview{padding:4em 0 4em}
+.section-preview .preview{margin-bottom:4em;background-color:#eaf1f1;border:1px solid rgba(0,0,0,0.1);border-radius:6px}
+.section-preview .preview .image{padding:5px}
+.section-preview .preview .image img{border:1px solid rgba(0,0,0,0.1)}
+.section-preview .preview .options{text-align:center;padding:0 2em 2em}
+.section-preview .preview .options p{margin-bottom:2em}
+.section-preview .dropdown-menu{text-align:left}
+.section-preview .lead{margin-bottom:2em}@media (max-width:767px){.section-preview .image img{width:100%}}
+
+.sponsor img{border:1px solid rgba(0,0,0,0.1);border-radius:4px}
+.sponsor a:hover{text-decoration:none}
+
+.bsa{padding:0}
+.bsa .one .bsa_it_ad{border:none !important;background-color:transparent !important}
+.bsa .one .bsa_it_ad .bsa_it_t,.bsa .one .bsa_it_ad .bsa_it_d{color:inherit !important}
+.bsa .one .bsa_it_ad .bsa_it_i{margin-bottom:0 !important}
+.bsa .one .bsa_it_p{display:none}
