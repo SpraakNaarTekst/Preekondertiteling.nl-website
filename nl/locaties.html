@@ -66,23 +66,25 @@ ogUrl: null
                 console.log(locations);
                 // Create a marker for every location
                 for(var index in locations) {
-                    var location = locations[index];
-                    if (location.postalAddress.latitude && location.postalAddress.longitude) {
-                        var infowindow = new google.maps.InfoWindow({
-                            content: location.name + ", " + location.postalAddress.city
-                        });
-                        var marker = new google.maps.Marker({
-                            map: map,
-                            position: {
-                                lat: location.postalAddress.latitude,
-                                lng: location.postalAddress.longitude
-                            },
-                            title: location.name + ", " + location.postalAddress.city
-                        });
-                        marker.addListener('click', function() {
-                            infowindow.open(map, marker);
-                        });
-                    }
+                    var locationParam = locations[index];
+                    (function(location) {
+                        if (location.postalAddress.latitude && location.postalAddress.longitude) {
+                            var infowindow = new google.maps.InfoWindow({
+                                content: location.name + ", " + location.postalAddress.city
+                            });
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: {
+                                    lat: location.postalAddress.latitude,
+                                    lng: location.postalAddress.longitude
+                                },
+                                title: location.name + ", " + location.postalAddress.city
+                            });
+                            marker.addListener('click', function() {
+                                infowindow.open(map, marker);
+                            });
+                        }
+                    })(locationParam);
                 }
             });
         }
