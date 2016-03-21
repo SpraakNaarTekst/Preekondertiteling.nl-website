@@ -58,14 +58,11 @@ ogUrl: null
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: nl,
                 scrollwheel: false,
-                zoom: 5
+                zoom: 7
             });
 
             // Get locations from REST API
-            $.ajax({
-                url: "http://mijn.spraaknaartekst.eu/data/location",
-                dataType: "jsonp"
-            }).done(function (locations) {
+            $.get("http://mijn.spraaknaartekst.eu/data/location", function(locations) {
                 console.log(locations);
                 // Create a marker for every location
                 for(var index in locations) {
