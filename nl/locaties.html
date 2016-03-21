@@ -68,6 +68,9 @@ ogUrl: null
                 for(var index in locations) {
                     var location = locations[index];
                     if (location.postalAddress.latitude && location.postalAddress.longitude) {
+                        var infowindow = new google.maps.InfoWindow({
+                            content: location.name + ", " + location.postalAddress.city
+                        });
                         var marker = new google.maps.Marker({
                             map: map,
                             position: {
@@ -75,6 +78,9 @@ ogUrl: null
                                 lng: location.postalAddress.longitude
                             },
                             title: location.name + ", " + location.postalAddress.city
+                        });
+                        marker.addListener('click', function() {
+                            infowindow.open(map, marker);
                         });
                     }
                 }
