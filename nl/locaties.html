@@ -64,24 +64,21 @@ ogUrl: null
             // Get locations from REST API
             $.ajax({
                 url: "http://mijn.spraaknaartekst.eu/data/location",
-                dataType: "jsonp",
-                success: function (data) {
-                    console.log(data)
-                    alert(data);
-                    console.log(locations);
-                    // Create a marker for every location
-                    for(var index in locations) {
-                        var location = locations[index];
-                        if (location.postalAddress.latitude && location.postalAddress.longitude) {
-                            var marker = new google.maps.Marker({
-                                map: map,
-                                position: {
-                                    lat: location.postalAddress.latitude,
-                                    lng: location.postalAddress.longitude
-                                },
-                                title: location.name + ", " + location.postalAddress.city
-                            });
-                        }
+                dataType: "jsonp"
+            }).done(function (locations) {
+                console.log(locations);
+                // Create a marker for every location
+                for(var index in locations) {
+                    var location = locations[index];
+                    if (location.postalAddress.latitude && location.postalAddress.longitude) {
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: {
+                                lat: location.postalAddress.latitude,
+                                lng: location.postalAddress.longitude
+                            },
+                            title: location.name + ", " + location.postalAddress.city
+                        });
                     }
                 }
             });
