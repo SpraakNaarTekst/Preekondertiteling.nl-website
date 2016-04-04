@@ -63,7 +63,6 @@ ogUrl: null
 
             // Get locations from REST API
             $.get("http://mijn.spraaknaartekst.eu/data/location", function(locations) {
-                console.log(locations);
                 // Create a marker for every location
                 for(var index in locations) {
                     var locationParam = locations[index];
