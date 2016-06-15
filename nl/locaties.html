@@ -71,15 +71,15 @@ ogUrl: null
                             var infowindow = new google.maps.InfoWindow({
                                 content: location.name + ", " + location.postalAddress.city
                             });
-					/*		var image = {
+							var image = {
 							url: 'http://spraaknaartekst.eu/static/img/pictogram.png',
 							origin: new google.maps.Point(0, 0),
 							anchor: new google.maps.Point(0, 32),
-							size: new google.maps.Size(20,20)}; */
+							size: new google.maps.Size(20,20)}; 
 							
                             var marker = new google.maps.Marker({
                                 map: map,
-								icon : 'http://spraaknaartekst.eu/static/img/pictogram.png',
+								icon : image,
                                 position: {
                                     lat: location.postalAddress.latitude,
                                     lng: location.postalAddress.longitude
