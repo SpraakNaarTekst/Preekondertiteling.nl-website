@@ -72,12 +72,12 @@ ogUrl: null
                                 content: location.name + ", " + location.postalAddress.city
                             });
 							var image = {
-							url = 'http://spraaknaartekst.eu/static/img/pictogram.png'
+							url: 'http://spraaknaartekst.eu/static/img/pictogram.png',
 							size: new google.maps.Size(20,20)};
 							
                             var marker = new google.maps.Marker({
                                 map: map,
-								icon: image,
+								icon : image,
                                 position: {
                                     lat: location.postalAddress.latitude,
                                     lng: location.postalAddress.longitude
