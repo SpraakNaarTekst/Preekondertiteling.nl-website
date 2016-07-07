@@ -1,3 +1,2 @@
-baseurl: "http://preekondertiteling.nl"
 gems:
   - jekyll-sitemap

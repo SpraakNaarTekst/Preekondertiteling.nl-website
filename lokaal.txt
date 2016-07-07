@@ -15,6 +15,3 @@ To compile
 jekyll build
 To run
 jekyll serve
-
-Of als dat laatste niet werkt
-start server.bat

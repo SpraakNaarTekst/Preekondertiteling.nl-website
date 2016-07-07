@@ -1,6 +1,0 @@
-{
-  "dependencies" : {
-    "connect" : "*",
-    "serve-static" : "*"
-  }
-}
