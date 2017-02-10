@@ -582,6 +582,13 @@ ol ol {
   padding-left: 0;
   list-style: none;
 }
+.list-style-none {
+  padding-left: 0;
+  list-style: none;
+}
+.list-style-none > li {
+  padding-top:10px;
+}
 .list-inline {
   padding-left: 0;
   list-style: none;
