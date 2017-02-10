@@ -5,58 +5,42 @@ translationGroup : "contact" # all translations for this page are defined within
 lang: "nl"
 
 layout: nl
-title: "Contact" # the page title will be prepended to common title
-keywords: null # page specific keywords in an array []
+title: Contact # the page title will be prepended to common title
+keywords: [contact,contactformulier] # page specific keywords in an array []
 description: null # page specific description
 group: null
 includeScripts: []
 
 navigationGroup: main
-navigationGroupRank: 5 # pages in the menu get sorted by navigationGroupRank
+navigationGroupRank: 4 # pages in the menu get sorted by navigationGroupRank
 
 ogTitle: null
 ogUrl: null
 
 ---
-    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-
-    <div class="banner">
-
-        <div class="container">
-
+        <!-- Header -->
+        <header>
+          <div class="page-header">
             <div class="row">
-                <div class="col-lg-6">
-                    <h2>Contactformulier</h2>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <!--<a href="/contact" class="btn btn-default btn-lg"><i class="fa fa-inbox fa-fw"></i> <span class="network-name">Contact</span></a>-->
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.banner -->
-
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">
-                        Neem contact op.
-                        <br>We reageren zo snel mogelijk
-                    </h2>
+	            <div class="col-lg-6 pull-right">
+	              <h1 class="hidden-xs">Contact</h1>
+	              <h2>Neem contact met ons op</h2>
+	              <p class="lead text-justify">Vragen, opmerkingen of suggesties rondom preekondertiteling horen we graag. We lezen elk bericht.</p>
+                <p>Mochten u vragen of opmerkingen hebben over <a href="http://www.spraaknaartekst.eu/nl/">spraak naar tekst</a>, dan kunt u die eventueel ook via het <a href="http://www.spraaknaartekst.eu/nl/contact">contactformulier daar</a> achterlaten.</p>
+                <h3>Adres</h3>
+                <p>
+                  Hoogveen 54<br />
+                  3344 EP Hendrik­Ido­Ambacht
+                </p>
+                <h3>BTW en KvK</h3> 
+                <p>
+                  BTW: NL853814181.B01<br />
+                  KvK: 60218002
+                </p>
+	            </div>
+	            <div class="col-lg-6 pull-left">
 			<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-	
+
 				<input type=hidden name="oid" value="00D24000000ZoyX">
 				<input type=hidden name="retURL" value="http://spraaknaartekst.eu">
 				<input id="00N2400000ATxKX" maxlength="20" name="00N2400000ATxKX" size="20" type="hidden" value="preekondertiteling.nl" />
@@ -87,39 +71,26 @@ ogUrl: null
                         	</div>
 				<input type="submit" name="submit" value="Verstuur!" class="btn btn-primary" />
 
-			</form>
-			<p class="lead"></p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    
-                </div>
-            </div>
+			</form>	              
+	            </div>
+	          </div>
+          </div>
+        </header>
+        <!-- / Header -->
 
+        <!-- Content -->
+        <div class="page-body">
+          <div class="row">
+            <section>
+              <div class="col-lg-3">
+                 
+              </div>
+            </section>
+            <section>
+              <div class="col-lg-3">
+                
+              </div>
+            </section>
+          </div>
         </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-    
-    <div class="banner">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Bedankt!</h2>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <!--<a href="/contact" class="btn btn-default btn-lg"><i class="fa fa-inbox fa-fw"></i> <span class="network-name">Contact</span></a>-->
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.banner -->
+        <!-- / Content -->
