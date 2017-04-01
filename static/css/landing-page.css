@@ -1,11 +1,12 @@
 
 .intro-header {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 60px;
+	padding-bottom: 180px;
 	color: #fff;
-	background: url(../img/kerkbanken.jpg) no-repeat center top;
+	background: url(../img/header.jpg) no-repeat;
 	background-size: cover;
-	text-align: center;
+	background-position-y: 20%;
+	text-align: right;
 }
 
 .intro-header h1, .intro-header h3, .intro-header h5 {
@@ -14,8 +15,9 @@
 
 .intro-message {
 	position: relative;
-	padding-top: 20px;
 	padding-bottom: 20px;
+	padding-right: 35px;
+	bottom:40px;
 }
 
 .intro-divider {
