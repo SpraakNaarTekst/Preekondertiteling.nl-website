@@ -1,1 +1,2 @@
-jekyll serve
+CALL jekyll serve
+PAUSE
