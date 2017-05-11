@@ -12,6 +12,11 @@ var mappings = {
         source : "https://docs.google.com/document/d/1jjcx74wxlLCsOotm4ZSRnKA54sVdtaUfAg_kUr0P1Gk/pub",
         filters : ["googledocs"],
         target : "./_includes/external/technisch_profiel_aanmaken.html"
+    },
+    "technisch_probleemoplossing_app_verbindt_niet" : {
+        source : "https://docs.google.com/document/d/1tln_Je_g5_ejFDNRh5sH0CrN-c2o1Y-kANJ-CD8tJKU/pub",
+        filters : ["googledocs"],
+        target : "./_includes/external/technisch_probleemoplossing_app_verbindt_niet.html"
     }
 };
 
