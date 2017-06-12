@@ -17,6 +17,11 @@ var mappings = {
         source : "https://docs.google.com/document/d/1tln_Je_g5_ejFDNRh5sH0CrN-c2o1Y-kANJ-CD8tJKU/pub",
         filters : ["googledocs"],
         target : "./_includes/external/technisch_probleemoplossing_app_verbindt_niet.html"
+    },
+    "technisch_geen_verbinding_middels_teamviewer" : {
+        source : "https://docs.google.com/document/d/1uYV5CpoWyOeDWJYtnhhyBdjUiaOLpTtianPEs__ZzLc/pub",
+        filters : ["googledocs"],
+        target : "./_includes/external/technisch_geen_verbinding_middels_teamviewer.html"
     }
 };
 
