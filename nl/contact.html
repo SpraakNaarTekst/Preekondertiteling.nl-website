@@ -39,8 +39,13 @@ ogUrl: null
                 </p>
 	            </div>
 	            <div class="col-lg-6 pull-left">
+			<script src="https://www.google.com/recaptcha/api.js"></script>
+			<script>
+			 function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+			</script>
 			<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
+				<input type=hidden name='captcha_settings' value='{"keyname":"WebToLead","fallback":"true","orgId":"00D24000000ZoyX","ts":""}'>
 				<input type=hidden name="oid" value="00D24000000ZoyX">
 				<input type=hidden name="retURL" value="http://spraaknaartekst.eu">
 				<input id="00N2400000ATxKX" maxlength="20" name="00N2400000ATxKX" size="20" type="hidden" value="preekondertiteling.nl" />
@@ -69,6 +74,7 @@ ogUrl: null
                             		<label for="description">Uw bericht*</label>
                             		<textarea required="true" id="description" rows="10" name="description" class="form-control" placeholder="Bericht..."></textarea>
                         	</div>
+				<div class="g-recaptcha" data-sitekey="6LcaLnUUAAAAAFtiLe6sB9H-cNSDWqCe-iWdzrxo"></div><br>
 				<input type="submit" name="submit" value="Verstuur!" class="btn btn-primary" />
 
 			</form>	              
