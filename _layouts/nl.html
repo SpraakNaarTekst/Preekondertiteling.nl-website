@@ -6,36 +6,36 @@
     <title>{{ page.title }}{% if page.title %} - {% endif %}Spraak naar Tekst - Voor het beschikbaar maken van spraak voor doven en slechthorenden</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if page.keywords %}
-    	{% if page.keywords.size != 0 %}
-    		<meta name="keywords" content="spraak naar tekst, spraak, tekst, tekstherkenning, preekondertiteling{% for keyword in page.keywords %},{{keyword}}{% endfor %}">
-		  {% endif %}
-	  {% else %}
+    {%- if page.keywords -%}
+    	{%- if page.keywords.size != 0 -%}
+    		<meta name="keywords" content="spraak naar tekst, spraak, tekst, tekstherkenning, preekondertiteling{%- for keyword in page.keywords -%},{{keyword}}{%- endfor -%}">
+		  {%- endif -%}
+	  {%- else -%}
 		  <meta name="keywords" content="spraak naar tekst, spraak, tekst, tekstherkenning, preekondertiteling">
-	  {% endif %}
-    {% if page.description %}
+	  {%- endif -%}
+    {%- if page.description -%}
       <meta name="description" content="{{page.description}}">
-    {% else %}
+    {%- else -%}
       <meta name="description" content="Wij proberen doven en slechthorenden te helpen zo veel mogelijk mee te maken van de 'gesproken wereld'. Ons belangrijkste product is op dit moment Preekondertiteling: het meelezen van een kerkdienst op een tablet.">
-    {% endif %}
+    {%- endif -%}
 
-    {% if page.ogTitle %}
+    {%- if page.ogTitle -%}
     	<meta property="og:title" content="{{page.ogTitle}}" />
-    {% elsif page.title %}
+    {%- elsif page.title -%}
     	<meta property="og:title" content="{{page.title}} - Spraak naar Tekst - Voor het beschikbaar maken van spraak voor doven en slechthorenden" />
-    {% else %}
+    {%- else -%}
       <meta property="og:title" content="Spraak naar Tekst - Voor het beschikbaar maken van spraak voor doven en slechthorenden" />
-    {% endif %}
+    {%- endif -%}
     <meta property="og:type" content="{{page.ogType}}" />
 	<meta property="og:image" content="{{page.ogImage}}" />
-    {% if page.ogUrl %}
+    {%- if page.ogUrl -%}
     	<meta property="og:url" content="{{page.ogUrl}}" />
-    {% else %}
+    {%- else -%}
     	<meta property="og:url" content="{{site.baseurl}}{{page.url}}" />
-    {% endif %}
-    {% if page.ogVideo %}
+    {%- endif -%}
+    {%- if page.ogVideo -%}
     	<meta property="og:video" content="{{page.ogVideo}}" />
-   	{% endif %}
+   	{%- endif -%}
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/css/bootstrap.css" media="screen">
@@ -49,16 +49,16 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 
-    {% if site.translations[page.translationGroup] and site.translations[page.translationGroup].size > 0 %}
-      {% for lang in site.translations[page.translationGroup] %}
-        {% assign langId = lang[0] %}
-        {% assign linkId = lang[1] %}
-        {% capture translateUrl %}{% for node in site.pages %}{% if node.id == linkId %}{{node.url}}{% endif %}{% endfor %}{% endcapture %}
-        {% if translateUrl %}
+    {%- if site.translations[page.translationGroup] and site.translations[page.translationGroup].size > 0 -%}
+      {%- for lang in site.translations[page.translationGroup] -%}
+        {%- assign langId = lang[0] -%}
+        {%- assign linkId = lang[1] -%}
+        {%- capture translateUrl -%}{%- for node in site.pages -%}{%- if node.id == linkId -%}{{node.url}}{%- endif -%}{%- endfor -%}{%- endcapture -%}
+        {%- if translateUrl -%}
           <link rel="alternate" hreflang="{{langId}}" href="{{site.baseurl}}{{translateUrl}}">
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
   </head>
   <body>
     
@@ -95,21 +95,21 @@
           <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
               
-			{% assign sorted_pages = site.pages | sort: "navigationGroupRank" %}
-			{% for node in sorted_pages %}
-				{% capture nodeURLStart %}{{node.url | truncate:7}}{% endcapture %}
-				{% if nodeURLStart == "/" or nodeURLStart == "/nl/" or nodeURLStart == "/ind..." or nodeURLStart == "/nl/..." %}
-					{% if node.group == null %} 
-						{% if node.navigationGroup == "main" %}
-							{% if page.id == node.id or page.additionalNavigationHighlight == node.id %}
+			{%- assign sorted_pages = site.pages | sort: "navigationGroupRank" -%}
+			{% for node in sorted_pages -%}
+				{%- capture nodeURLStart -%}{{node.url | truncate:7}}{%- endcapture -%}
+				{%- if nodeURLStart == "/" or nodeURLStart == "/nl/" or nodeURLStart == "/ind..." or nodeURLStart == "/nl/..." -%}
+					{%- if node.group == null -%} 
+						{%- if node.navigationGroup == "main" -%}
+							{%- if page.id == node.id or page.additionalNavigationHighlight == node.id %}
 								<li class="active"><a href="{{node.url}}">{{node.title}}</a></li>
-							{% else %}
+							{%- else %}
 								<li><a href="{{node.url}}">{{node.title}}</a></li>
-							{% endif %}
-						{% endif %}
-					{% endif %}
-				{% endif %}
-			{% endfor %}
+							{%- endif %}
+						{%- endif -%}
+					{%- endif -%}
+				{%- endif -%}
+			{%- endfor %}
             </ul>
           </div>
           <div>
@@ -149,14 +149,14 @@
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/bootswatch.js"></script>
 
-    {% if page.includeScripts %}
-    	{% if page.includeScripts.size != 0 %}
-    		{% for script in page.includeScripts %}
-    			{% capture includename %}scripts/{{ script }}.incl{% endcapture %}
-    			{% include {{includename}} %}
-  			{% endfor %}
-  		{% endif %}
-  	{% endif %}
+    {%- if page.includeScripts -%}
+    	{%- if page.includeScripts.size != 0 -%}
+    		{%- for script in page.includeScripts -%}
+    			{%- capture includename -%}scripts/{{ script }}.incl{%- endcapture -%}
+    			{%- include {{includename}} -%}
+  			{%- endfor -%}
+  		{%- endif -%}
+  	{%- endif -%}
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
