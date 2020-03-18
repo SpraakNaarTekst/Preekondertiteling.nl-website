@@ -36,7 +36,7 @@ layout: nl
     <div class="content-section-a">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
+                <div class="col-lg-12">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">
                         Thuis meelezen
@@ -47,9 +47,6 @@ layout: nl
                         Belangrijk is daarbij dat de PC in de kerk dus van buiten te benaderen is.
                     </p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    
-                </div>
             </div>
         </div>
         <!-- /.container -->
@@ -59,7 +56,7 @@ layout: nl
     <div class="content-section-b">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
+                <div class="col-lg-12">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">
                         De kerk PC openzetten voor verbindingen van buiten de kerk
@@ -69,24 +66,20 @@ layout: nl
                         De internet verbinding vanaf de kerk PC naar buiten toe gaat via een router.
                         Deze router is de 'toegangspoort' tot het internet en moet goed ingesteld worden.
                     </p>
-                    <p>
+                    <p class="lead">
                         Alle toegangspoorten tot het internet hebben een wereldwijd uniek IP adres waarmee ze kunnen worden geïdentificeerd. 
                         Als we van buiten de kerk met de tablet verbinding willen maken met de kerk PC, hebben we dat IP adres nodig.
                     </p>
-                    <p>
+                    <p class="lead">
                         Om het IP adres van de router te vinden, kunnen we <em>vanaf de kerk PC</em> in een browser navigeren naar <a href='https://www.whatismyip.com/'>https://www.whatismyip.com/</a>.
-                        Het IP adres dat daar verschijnt is het IP adres van de 'toegangspoort' van de kerk PC naar het internet, en dat is normaliter het IP adres van de router.
+                        Het IP adres dat daar verschijnt is het IP adres waarmee de router met het internet verbonden is.
                     </p>
-                    <p>
-                        Het enige wat er nu nog moet gebeuren is dat we op de router aangeven dat als de tablet verbinding maakt met de router, de router deze verbinding 'doorschakelt' naar de kerk PC.
+                    <p class="lead">
+                        Wat er nu nog moet gebeuren is dat we op de router aangeven dat als de tablet verbinding maakt met de router, de router deze verbinding 'doorschakelt' naar de kerk PC.
                         Dit kan met 'port forwarding', en werkt helaas op elke router weer een beetje anders.
                         Als u hier niet bekend mee bent, is er wellicht iemand die daarbij kan helpen.
-                        We kunnen verbindingen van de tablet herkennen aan het feit dat deze poort 3000 gebruiken.
-                        Als we verbindingen op poort 3000 forwarden naar het lokale IP adres van de kerk PC, dan zou alles moeten werken.
+                        Onderstaand alvast een korte instructie.
                     </p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    
                 </div>
             </div>
         </div>
@@ -95,6 +88,42 @@ layout: nl
     <!-- /.content-section-b -->
 
     <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">
+                        Instructies Port Forwarden
+                    </h2>
+                    <p class="lead">
+                        U kunt naar het configuratiescherm van de router gaan door <em>vanaf de kerk PC</em> naar het lokale IP adres van de router te gaan.
+                        Dit lokale IP adres is vaak <a href='http://192.168.1.1'>192.168.1.1</a> maar om dit zeker te weten kunt u in een command-prompt 'ipconfig' typen.
+                        Vervolgens verschijnen er een heel aantal gegevens en moet u het IP adres gebruiken dat achter de tekst 'Default Gateway' staat.
+                        Zie ook de afbeelding rechts.
+                        Ook je eigen lokale IP adres heb je zometeen nodig. Die staat achter 'IPv4 Address'.
+                    </p>
+                    <p class="lead">
+                        Voor het port forwarden moeten we poort 3000 forwarden naar het eigen 'IPv4 Address' adres van de kerk PC.
+                        Zie ook de afbeelding rechts hoe dat op een specifieke Asus Router er uit ziet.
+                        Als dat ingesteld is, zal de router verbindingen die van buiten op poort 3000 binnekomen, forwarden naar het lokale IP adres van de kerk PC, en dan zou alles moeten werken.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img style="width: 100%;" src='/static/img/documentatie/beheerder/thuislezen/ipconfig.png'/>
+                    De 'Default Gateway' wijst naar de router. 
+                    De 'IPv4 Address' is het eigen lokale adres.
+                    <br />
+                    <br />
+                    <img style="width: 100%;" src='/static/img/documentatie/beheerder/thuislezen/portforwarding.png'/>
+                    Verbinding van buiten op poort 3000 worden doorgezet naar het lokale IP adres. 
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
@@ -109,13 +138,16 @@ layout: nl
                     </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    
+                    <img style="width: 100%;" src='/static/img/documentatie/beheerder/thuislezen/laden.png'/>
+                    De tablet zal eerst proberen te laden, waarna een scherm verschijnt om handmatig een IP adres in te vullen.
                 </div>
             </div>
         </div>
         <!-- /.container -->
     </div>
-    <!-- /.content-section-a -->
+    <!-- /.content-section-b -->
+    
+    
     
     <div class="banner">
         <div class="container">
